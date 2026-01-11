@@ -874,8 +874,8 @@ class HumanOpponent():
 
 
 class HockeyEnv_BasicOpponent(HockeyEnv):
-  def __init__(self, mode=Mode.NORMAL, weak_opponent=False):
-    super().__init__(mode=mode, keep_mode=True)
+  def __init__(self, mode=Mode.NORMAL, weak_opponent=False, **kwargs):
+    super().__init__(mode=mode, keep_mode=True, **kwargs)
     self.opponent = BasicOpponent(weak=weak_opponent)
     # linear force in (x,y)-direction, torque, and shooting
     self.action_space = spaces.Box(-1, +1, (4,), dtype=np.float32)
